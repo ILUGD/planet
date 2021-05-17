@@ -6,9 +6,12 @@ Blogs should be generally tech themed. If you aren't sure or you have a general 
 ## Adding your feed 
 To add your feed -:
 * Fork this repo 
-* Add your feed to osmosfeed.yaml similar to the ones already there
+* Add your feed to planet.ini similar to the ones already there
 ```
-   - href: yourblog.com/index.xml
+[ILUGD youtube]
+  title = ILUGD Youtube
+  link  = https://www.youtube.com/c/linuxdelhi
+  feed  = https://www.youtube.com/feeds/videos.xml?channel_id=UCQ4jkid1GjrmEQxWZCbD_Eg
 ```
 * Create a pull request 
 
