@@ -17,14 +17,14 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v2.1.4
-        with:
-          node-version: "14"
-      - name: Install dependencies
-        run: npm i
+      - name: install planet pluto
+        run: sudo gem install pluto
+      - name: install ruby sqlite3
+        run: sudo gem install sqlite3
       - name: Build the feed
-        run: npm run build
+        run: pluto build planet.ini --template top -o public
+      - name: make index
+        run: cp public/planet.top.html public/index.html
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
