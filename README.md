@@ -15,6 +15,8 @@ To add your feed -:
 ```
 * Create a pull request 
 
+Note that certain static site generators like hugo may generate feeds with relative URLs. This does not conform to the [standard](https://validator.w3.org/feed/docs/error/InvalidFullLink.html) and your listings will be erroneous. Read [this answer](https://stackoverflow.com/a/48457055/2251364) for a possible solution.
+
 ## Basic Guidlines for the Planet
 This Planet is kind of an impression of the ILUGD volunteers hence you are required to follow some basic guidelines and the [COC](https://github.com/ILUGD/Code-of-Conduct).
 
