@@ -1,4 +1,19 @@
+@media all and (max-width:1000px){
+    table{
+        width:100%;
+    }
 
+    td{
+        display:block;
+    }
+
+}
+
+@media all and (min-width:1000px){
+	.parent > tbody > tr > td{
+		width: 33%;
+	}
+}
 
 body {
   font-family: sans-serif;
