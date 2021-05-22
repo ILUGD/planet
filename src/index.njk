@@ -1,0 +1,24 @@
+---
+layout: base.njk
+---
+
+{% from 'macros/cards.njk' import feedCard %}
+{% include 'partials/banner.njk' %}
+<main>
+  <div class="mx-auto w-full bg-gray-300 items-center">
+    <div class="py-10 px-5 md:px-20 bg-gray-300">
+       <div class="mx-auto max-w-screen-xl grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 grid-rows-1 gap-4 justify-items-center">
+      {% asyncEach feed in collections.feeds %}
+        <section class="w-full py-4 px-4 m-2 shadow-md h-full bg-white rounded-md">
+          <div class="mb-3">
+            <a class="text-xl font-semibold hover:underline" href="{{ feed.data.link }}" target="_blank">{{ feed.data.title }}</a>
+          </div>
+          {{ feedCard(feed.data.feedData) }}
+        </section>
+      {% endeach %}
+      </div>
+    </div>
+  </div>
+</main>
+
+{% include 'partials/footer.njk' %}
