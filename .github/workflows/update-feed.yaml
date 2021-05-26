@@ -1,30 +1,28 @@
-name: Build site on schedule or main branch update
-
+name: DeployWebsite
 on:
   push:
     branches:
       - main
   schedule:
-    # Adjust refresh schedule here. By default, it runs once per day.
-    # Syntax reference: https://docs.github.com/en/actions/reference/events-that-trigger-workflows#schedule
-    # Recommended tool: https://crontab.guru/
     - cron: "0 0 * * *"
   workflow_dispatch:
 
 jobs:
-  build:
+  build-site:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v2
-      - name: install planet pluto
-        run: sudo gem install pluto
-      - name: install ruby sqlite3
-        run: sudo gem install sqlite3
-      - name: Build the feed
-        run: pluto build planet.ini --template top -o public
-      - name: make index
-        run: cp public/planet.top.html public/index.html
+
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: "14.x"
+
+      - name: Build the Feed
+        run: |
+          npm ci
+          npm run build
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
