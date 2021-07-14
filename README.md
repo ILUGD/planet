@@ -4,15 +4,20 @@ LinuxDelhi planet is an rss feed aggregator which collects blog posts from peopl
 Blogs should be generally tech themed. If you aren't sure or you have a general blog then maybe consider setting up a tag and subscribing that feed here.
 
 ## Adding your feed 
-To add your feed -:
+
+Steps to join the planet
+
 * Fork this repo 
-* Add your feed to planet.ini similar to the ones already there
+* Add your feed to `src/feeds/<your_name>.njk. The file needs be in the following format
+
+```yaml
+---
+title: <Your Blog Title>
+link: "<link to your blog>"
+feed: "<rss/atom/json feed url>"
+---
 ```
-[ILUGD youtube]
-  title = ILUGD Youtube
-  link  = https://www.youtube.com/c/linuxdelhi
-  feed  = https://www.youtube.com/feeds/videos.xml?channel_id=UCQ4jkid1GjrmEQxWZCbD_Eg
-```
+
 * Create a pull request 
 
 Note that certain static site generators like hugo may generate feeds with relative URLs. This does not conform to the [standard](https://validator.w3.org/feed/docs/error/InvalidFullLink.html) and your listings will be erroneous. Read [this answer](https://stackoverflow.com/a/48457055/2251364) for a possible solution.

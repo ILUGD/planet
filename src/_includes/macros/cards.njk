@@ -1,0 +1,18 @@
+{% macro feedCard(feed) %}
+<article class="feed-card">
+  <ul class="feed-card-list">
+    {% for item in feed.items %} 
+    <li>
+      <div class="feed-card-post">
+        {% if item.pubdate %}
+        <time class="text-sm text-gray-400" datetime="{{ item.pubdate }}">{{ item.pubdate | prettyDate }}</time> 
+        {% else %}
+        <time class="text-sm text-gray-400" datetime="{{ item.published }}">{{ item.published | prettyDate }}</time> 
+        {% endif %}
+        <a href="{{ item.link }}" target="_blank">{{ item.title }}</a>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+</article>
+{% endmacro %}
