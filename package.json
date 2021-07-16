@@ -1,6 +1,6 @@
 {
   "name": "planet",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "RSS Aggregator built using 11ty.js and tailwindcss",
   "main": "index.js",
   "scripts": {
@@ -14,11 +14,11 @@
     "11ty",
     "rss"
   ],
-  "homepage": "https://github.com/Boot-Error/planet",
+  "homepage": "https://github.com/ILUGD/planet",
   "bugs": {
-    "url": "https://github.com/Boot-Error/planet/issues"
+    "url": "https://github.com/ILUGD/planet/issues"
   },
-  "author": "Boot-Error <booterror99@gmail.com>",
+  "author": "",
   "license": "MIT",
   "devDependencies": {
     "rimraf": "^3.0.2"

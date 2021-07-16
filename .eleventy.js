@@ -6,7 +6,7 @@ const { fetchFeed } = require("./.eleventy.modules");
 
 module.exports = function (eleventyConfig) {
   // passthrough copy
-  eleventyConfig.addPassthroughCopy({ "./src/images": "assets" });
+  eleventyConfig.addPassthroughCopy({ "./src/images": "assets", "./src/js": "assets" });
 
   // plugins
   eleventyConfig.addPlugin(pluginMetagen);
