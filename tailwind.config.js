@@ -35,7 +35,7 @@ module.exports = {
     },
     boxShadow: {
       ...defaultTailwind.boxShadow,
-      apnaShadow: "0 25px 50px -12px rgba(1, 64, 41, 0.25)"
+      cardShadow: "0 25px 50px -12px rgba(1, 64, 41, 0.25)"
     }
   },
   variants: {},
