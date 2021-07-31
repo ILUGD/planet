@@ -16,11 +16,11 @@ module.exports = {
     },
     colors: {
       ...colors,
-      apnaGreen: "#04D98B",
-      dateGreen: "#038C5A",
-      apniHeading: "#014029",
-      neechuBG: "#3B3C40",
-      neechuText: "#f2f2f2",
+      greenCyan: "#04D98B",
+      medDarkGreenCyan: "#038C5A",
+      darkGreenCyan: "#014029",
+      darkGrayishBlue: "#3B3C40",
+      lightGray: "#f2f2f2",
       ivory: "#FFFFF0",
     },
     fontFamily: {

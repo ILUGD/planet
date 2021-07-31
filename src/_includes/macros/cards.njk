@@ -3,11 +3,11 @@
   <ul class="feed-card-list">
     {% for item in feed.items %} 
     <li>
-      <div class="feed-card-post text-apniHeading">
+      <div class="feed-card-post text-darkGreenCyan">
         {% if item.pubdate %}
-        <time class="text-sm text-dateGreen" datetime="{{ item.pubdate }}">{{ item.pubdate | prettyDate }}</time> 
+        <time class="text-sm text-medDarkGreenCyan" datetime="{{ item.pubdate }}">{{ item.pubdate | prettyDate }}</time> 
         {% else %}
-        <time class="text-sm text-dateGreen" datetime="{{ item.published }}">{{ item.published | prettyDate }}</time> 
+        <time class="text-sm text-medDarkGreenCyan" datetime="{{ item.published }}">{{ item.published | prettyDate }}</time> 
         {% endif %}
         <a href="{{ item.link }}" target="_blank">{{ item.title }}</a>
       </div>
