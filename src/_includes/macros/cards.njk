@@ -9,7 +9,7 @@
         {% else %}
         <time class="text-sm text-medDarkGreenCyan" datetime="{{ item.published }}">{{ item.published | prettyDate }}</time> 
         {% endif %}
-        <a href="{{ item.link }}" target="_blank">{{ item.title }}</a>
+        <a href="{{ item.link }}" target="_blank" class="dark:text-gray-100">{{ item.title }}</a>
       </div>
     </li>
     {% endfor %}

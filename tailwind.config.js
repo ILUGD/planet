@@ -3,11 +3,15 @@ const defaultTailwind = require('tailwindcss/defaultTheme');
 
 module.exports = {
   purge: false,
-  darkMode: false, // or 'media' or 'class'
+  darkMode: 'class', // or 'media' or 'class'
   theme: {
     extend: {
       gridTemplateRows: {
         'masonary': '1fr auto'
+      },
+      colors: {
+        'regal-blue': '#243c5a',
+        'faux-russian-violet': '#290f52'
       },
       backgroundImage: theme => ({
         'cartographer': "url('/assets/cartographer.png')",
