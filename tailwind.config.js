@@ -26,6 +26,8 @@ module.exports = {
       darkGrayishBlue: "#3B3C40",
       lightGray: "#f2f2f2",
       ivory: "#FFFFF0",
+      darkGray: "#2c2c2c",
+      cardDarkGray: "#393939",
     },
     fontFamily: {
       sans: [
