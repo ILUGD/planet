@@ -5,7 +5,7 @@
     <li>
       <div class="feed-card-post text-darkGreenCyan">
         {% if item.pubdate %}
-        <time class="text-sm text-medDarkGreenCyan" datetime="{{ item.pubdate }}">{{ item.pubdate | prettyDate }}</time> 
+        <time class="text-sm text-medDarkGreenCyan dark:text-greenCyan" datetime="{{ item.pubdate }}">{{ item.pubdate | prettyDate }}</time> 
         {% else %}
         <time class="text-sm text-medDarkGreenCyan" datetime="{{ item.published }}">{{ item.published | prettyDate }}</time> 
         {% endif %}

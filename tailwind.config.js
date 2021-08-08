@@ -26,6 +26,7 @@ module.exports = {
       darkGrayishBlue: "#3B3C40",
       lightGray: "#f2f2f2",
       ivory: "#FFFFF0",
+      cardCream: "#FFFFBD",
       darkGray: "#2c2c2c",
       cardDarkGray: "#393939",
     },
@@ -37,7 +38,7 @@ module.exports = {
     },
     boxShadow: {
       ...defaultTailwind.boxShadow,
-      cardShadow: "0 25px 50px -12px rgba(1, 64, 41, 0.25)"
+      cardShadow: "0 5px 50px -12px rgba(1, 64, 41, 0.1)",
     }
   },
   variants: {},
