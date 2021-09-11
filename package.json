@@ -1,6 +1,6 @@
 {
   "name": "planet",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "RSS Aggregator built using 11ty.js and tailwindcss",
   "main": "index.js",
   "scripts": {
