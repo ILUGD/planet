@@ -1,6 +1,7 @@
 const url = require("url");
 const axios = require("axios");
 const FeedMe = require("feedme");
+const moment = require("moment");
 const _ = require("lodash");
 
 /**
@@ -63,7 +64,34 @@ function correctFeedLink(feedItem, baseUrl) {
   return feedItem;
 }
 
+/**
+ * Sort the feed by the lastest post
+ *
+ * This ensure that feeds with latest updates stays on top
+ *
+ * @param {*} feeds
+ */
+function sortFeedByLatestPost(feeds) {
+  return _.sortBy(feeds, [o => {
+    const feedData = o.data.feedData
+    const latestPost = _.head(feedData.items)
+    // const updatedRaw = feedData.lastbuilddate || (feedData.updated || feedData.published)
+    const updatedRaw = latestPost.pubdate || latestPost.published || latestPost.updated
+    console.log(o.data.feedData.title, updatedRaw)
+    const updated = moment(updatedRaw)
+    return moment().diff(updated)
+  }]);
+}
+
+function movePinFeedsToTop(feeds) {
+  const pinnedFeeds = feeds.filter(f => f.data.pin || false)
+  const notPinnedFeeds = feeds.filter(f => !f.data.pin || false)
+  return _.concat(pinnedFeeds, notPinnedFeeds)
+}
+
 module.exports = {
   fetchFeed: fetchFeed,
   correctFeedLink: correctFeedLink,
+  sortFeedByLatestPost: sortFeedByLatestPost,
+  movePinFeedsToTop: movePinFeedsToTop,
 };

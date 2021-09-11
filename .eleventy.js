@@ -2,7 +2,7 @@ const pluginTailwindCSS = require("eleventy-plugin-tailwindcss");
 const pluginMetagen = require("eleventy-plugin-metagen");
 const _ = require("lodash");
 const moment = require("moment");
-const { fetchFeed } = require("./.eleventy.modules");
+const { fetchFeed, sortFeedByLatestPost, movePinFeedsToTop } = require("./.eleventy.modules");
 
 module.exports = function (eleventyConfig) {
   // passthrough copy
@@ -31,8 +31,7 @@ module.exports = function (eleventyConfig) {
       )
       .value();
     const res = await Promise.all(allFeeds);
-    // console.log(res)
-    return res;
+    return movePinFeedsToTop(sortFeedByLatestPost(res));
   });
 
   return {
