@@ -30,6 +30,6 @@
     "axios": "^0.26.1",
     "eleventy-plugin-metagen": "^1.6.1",
     "lodash": "^4.17.21",
-    "moment": "^2.29.1"
+    "moment": "^2.29.3"
   }
 }
