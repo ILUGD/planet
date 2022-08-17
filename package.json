@@ -25,7 +25,7 @@
   },
   "dependencies": {
     "feedme": "^2.0.2",
-    "@11ty/eleventy": "^0.12.1",
+    "@11ty/eleventy": "^1.0.2",
     "eleventy-plugin-tailwindcss": "^0.3.0",
     "axios": "^0.27.2",
     "eleventy-plugin-metagen": "^1.6.1",
