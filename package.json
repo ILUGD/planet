@@ -28,7 +28,7 @@
     "@11ty/eleventy": "^0.12.1",
     "eleventy-plugin-tailwindcss": "^0.3.0",
     "axios": "^0.27.2",
-    "eleventy-plugin-metagen": "^1.6.1",
+    "eleventy-plugin-metagen": "^1.7.11",
     "lodash": "^4.17.21",
     "moment": "^2.29.4"
   }
