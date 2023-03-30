@@ -31,7 +31,9 @@ module.exports = function (eleventyConfig) {
       )
       .value();
     const res = await Promise.all(allFeeds);
-    return movePinFeedsToTop(sortFeedByLatestPost(res));
+    // passthrough only valid feeds
+    const validFeeds = res.filter((feed) => Object.keys(feed.data.feedData).length !== 0);
+    return movePinFeedsToTop(sortFeedByLatestPost(validFeeds));
   });
 
   return {
