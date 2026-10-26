@@ -4,27 +4,43 @@ on:
     branches:
       - main
   schedule:
-    - cron: "0 0 * * *"
+    - cron: "0 0 */4 * *"
   workflow_dispatch:
 
 jobs:
-  build-site:
-    runs-on: ubuntu-latest
+  build:
+    runs-on: ubuntu-26.04
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v7
 
       - name: Setup Node
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v7
         with:
-          node-version: "14.x"
+          node-version: "24.x"
 
       - name: Build the Feed
         run: |
           npm ci
           npm run build
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v5
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+          path: ./public
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-26.04
+
+    permissions:
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
